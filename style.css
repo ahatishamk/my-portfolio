@@ -1,0 +1,417 @@
+/* -----------------------------------------------------
+   GOOGLE FONTS IMPORT
+----------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+
+/* -----------------------------------------------------
+   GLOBAL RESET
+----------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 8px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a { text-decoration: none; }
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -----------------------------------------------------
+   HEADER (NAV)
+----------------------------------------------------- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 50px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: crimson;
+    transition: width 0.3s;
+}
+
+header nav ul li a:hover::after { width: 100%; }
+header nav ul li a:hover { color: crimson; }
+
+
+/* -----------------------------------------------------
+   HERO SECTION
+----------------------------------------------------- */
+#one {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./img/one.png);
+    background-size: cover;
+    background-position: top center;
+}
+
+#one .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 200px;
+}
+
+#one h1 {
+    font-size: 5rem;
+    font-weight: 1200;
+    color: black;
+    margin-left: 50px;
+    overflow: hidden;
+}
+
+#one h1 .line {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    animation: lineInAlt 0.8s forwards ease-out;
+}
+
+#one h1 .line:nth-child(1) { animation-delay: 0.2s; }
+#one h1 .line:nth-child(2) { animation-delay: 0.5s; }
+#one h1 .line:nth-child(3) { animation-delay: 0.8s; }
+#one h1 .line:nth-child(4) { animation-delay: 1.1s; }
+
+@keyframes lineInAlt {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/* -----------------------------------------------------
+   GLOBAL BUTTON (CTA)
+----------------------------------------------------- */
+.cta {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-top: 40px;
+    color: rgb(16, 15, 15);
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background-color: #f50f0f;
+    color: white;
+    transform: scale(1.05);
+}
+
+.cta.hero {
+    border-color: white;
+    color: white;
+    margin-left: 180px;
+}
+
+.cta.hero:hover {
+    background-color: white;
+    color: #000;
+}
+
+
+/* -----------------------------------------------------
+   SECTION TITLES
+----------------------------------------------------- */
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+    margin-bottom: 10px;
+}
+
+.section-title span { color: crimson; }
+
+
+/* -----------------------------------------------------
+   SERVICES SECTION
+----------------------------------------------------- */
+#services {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+#services .service-top {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+#services .service-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+#services .service-item {
+    flex: 0 1 calc(33.333% - 40px);
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    text-align: center;
+}
+
+#services .service-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+}
+
+#services .icon {
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    margin: 0 auto 25px auto;
+}
+
+#services .icon img {
+    transition: 0.6s;
+}
+
+#services .service-item:hover .icon img {
+    transform: scale(1.18);
+}
+
+#services .service-item h2 {
+    font-size: 2.4rem;
+    margin-bottom: 15px;
+}
+
+#services .service-item p {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+}
+
+
+/* -----------------------------------------------------
+   PROJECTS SECTION (Same Layout)
+----------------------------------------------------- */
+#projects {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+#projects .service-top {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+#projects .service-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+#projects .service-item {
+    flex: 0 1 calc(33.333% - 40px);
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+#projects .icon {
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#projects .icon img {
+    transition: 0.6s;
+}
+
+#projects .service-item:hover .icon img {
+    transform: scale(1.18);
+}
+
+
+/* -----------------------------------------------------
+   ABOUT SECTION
+----------------------------------------------------- */
+#about {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.about-left img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-right h3 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.about-right p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+
+/* -----------------------------------------------------
+   CONTACT SECTION
+----------------------------------------------------- */
+#contact {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+#contact .service-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+#contact .service-item {
+    flex: 0 1 calc(33.333% - 40px);
+    padding: 35px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+
+/* -----------------------------------------------------
+   RESPONSIVE FIX (FINAL & CLEAN)
+----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    #services .service-item,
+    #projects .service-item,
+    #contact .service-item {
+        flex: 0 1 calc(50% - 20px);
+    }
+
+    .about-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #one h1 {
+        font-size: 3.5rem;
+        margin-left: 20px;
+    }
+
+    #services .service-item,
+    #projects .service-item,
+    #contact .service-item {
+        flex: 0 1 100%;
+    }
+
+    .icon {
+        width: 160px !important;
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #one h1 { font-size: 2.8rem; }
+
+    .cta {
+        font-size: 2rem;
+        padding: 12px 30px;
+    }
+
+    .icon {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    section {
+        padding: 50px 20px !important;
+    }
+}
